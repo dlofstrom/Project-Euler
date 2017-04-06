@@ -1,7 +1,9 @@
 # Project-Euler
-My solutions to the Project Euler problems
+My solutions to the Project Euler problems.
 
-Dependencied: [libcurl](https://curl.haxx.se/libcurl), [libtidy](http://www.html-tidy.org/developer)
+Problems solved in problems directory.
+
+Dependencies: [libcurl](https://curl.haxx.se/libcurl), [libtidy](http://www.html-tidy.org/developer)
 
 To build and run:
 '''

@@ -6,7 +6,7 @@ Problems solved in problems directory.
 Dependencies: [libcurl](https://curl.haxx.se/libcurl), [libtidy](http://www.html-tidy.org/developer)
 
 To build and run:
-```
+```bash
 make #build all problems
 make all #build all problems
 make run-all #build and run all problems

@@ -10,7 +10,7 @@ To build and run:
 make #build all problems
 make all #build all problems
 make run-all #build and run all problems
-make problemX #bulid problem X
+make problemX #build problem X
 make run-problemX #build and run problem X
 bin/problemX #run problem X
 ```

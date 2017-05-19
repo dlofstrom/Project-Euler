@@ -15,17 +15,15 @@ void problem(char *info)
     for (n = 1; d < 500; n++) {
         //Calculate triangle number for number "n"
         N += n;
-        //printf("%llu: %llu - ", n, N);
 
         //Count divisors
         d = 0;
-        for (t = 1; t < sqrt(N); t++) {
+        for (t = 1; t <= sqrt(N); t++) {
             if (N % t == 0) {
-                //printf("%llu ", t);
                 d += 2;
+                if (N / t == t) d -= 1;
             }
         }
-        //printf("\n");
     }
     
     printf("Answer %llu\n", N);

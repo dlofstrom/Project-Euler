@@ -12,4 +12,7 @@ uint8_t generate_primes(uint64_t n);
 uint8_t is_prime(uint64_t n);
 uint64_t get_prime(uint32_t i);
 
+//Get row
+char *get_row(char **start, char *row);
+
 #endif

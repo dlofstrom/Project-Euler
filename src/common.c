@@ -118,3 +118,21 @@ uint64_t get_prime(uint32_t i) {
 
     return primes[i];
 }
+
+
+//Get row, returns start of next row
+char *get_row(char **start, char *row) {
+    char *stop = *start;
+    //move to end of line
+    while (*stop != '\n' && *stop != '\0') stop++;
+    strncpy(row, *start, stop-(*start));
+    row[stop-(*start)] = '\0';
+    
+    if (*stop != '\0') {
+        *start = stop + 1;
+        return 1;
+    } else {
+        *start = stop;
+        return 0;
+    }
+}

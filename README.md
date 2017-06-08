@@ -3,6 +3,8 @@ My solutions to the Project Euler problems.
 
 Problems solved in problems directory.
 
+For now only compiled and tested on macOS (clang).
+
 Dependencies: [libcurl](https://curl.haxx.se/libcurl), [libtidy](http://www.html-tidy.org/developer)
 
 To build and run:

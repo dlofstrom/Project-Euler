@@ -6,9 +6,9 @@
 #include "common.h"
 
 typedef struct {
-    uint32_t row;
-    uint32_t number;
-    uint32_t max;
+    unsigned int row;
+    unsigned int number;
+    unsigned int max;
 } t_t;
 
 void problem(char *info)
@@ -16,8 +16,8 @@ void problem(char *info)
     char row[1000];
     char *rp;
     char *start = info;
-    uint32_t r = 0;
-    uint32_t t;
+    unsigned int r = 0;
+    unsigned int t;
     t_t triangle[121] = {{0,0,0}}; //Number of numbers in triangle
     t_t *tp;
 

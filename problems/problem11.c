@@ -8,8 +8,8 @@
 void problem(char *info)
 {
     //The grid contains 20x20 numbers
-    uint32_t data[400];
-    uint32_t *data_ptr = data;
+    unsigned int data[400];
+    unsigned int *data_ptr = data;
     
     //Go throug every row in info and fill data array with numbers
     char *start = info;
@@ -41,9 +41,9 @@ void problem(char *info)
     //  - right: i, i+1, i+2, i+3 if i+3 < 400 and i+3 % 20 > i % 20
     //  - diagonal dr: i, i+21, i+42, i+63 if i+63 < 400 and i+3 % 20 > i % 20
     //  - diagonal dl: i, i+19, i+38, i+57 if i+57 < 400 and i-3 % 20 < i % 20
-    uint32_t i;
-    uint32_t product = 0;
-    uint32_t p;
+    unsigned int i;
+    unsigned int product = 0;
+    unsigned int p;
     for (i = 0; i < 400; i++) {
         //down
         if (i+60 < 400) {

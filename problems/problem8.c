@@ -42,10 +42,10 @@ void problem(char *info)
 
     //Now number contains the 1000 digit number
     //Go through every thirteen adjacent and calculate product
-    uint64_t product = 0;
-    uint64_t p;
+    unsigned long long product = 0;
+    unsigned long long p;
     np = number;
-    uint8_t i;
+    int i;
     while (*(np + 12) != '\0') {
         p = 1;
         for (i = 0; i < 13; i++) p *= *(np+i) - '0';

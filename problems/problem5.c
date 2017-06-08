@@ -8,11 +8,11 @@
 
 void problem(char *info)
 {
-    uint32_t multiple = 1;
-    uint8_t powers[8] = {0}; //8 primes <= 20
+    unsigned int multiple = 1;
+    int powers[8] = {0}; //8 primes <= 20
 
     //Calculate prime divisors for numbers 2-20 (e.g 20 = 2*2*5 = 2^2*5)
-    uint8_t n,i,power,prime, rest;
+    int n,i,power,prime, rest;
     for (n = 2; n <= 20; n++) {
         i = 0;
         power = 0;

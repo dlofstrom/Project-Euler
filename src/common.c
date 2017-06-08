@@ -2,14 +2,14 @@
 
 //Prime variables
 static FILE *fp;
-static uint64_t *primes;
-static uint32_t psize;
-static uint64_t pgenerated;
+static unsigned long long *primes;
+static unsigned int psize;
+static unsigned long long pgenerated;
 
 
 //Load primes into array
-uint8_t load_primes() {
-    primes = malloc(sizeof(uint64_t));
+int load_primes() {
+    primes = malloc(sizeof(unsigned long long));
     *primes = 0;
     psize = 0;
     //Open prime list file
@@ -17,7 +17,7 @@ uint8_t load_primes() {
     if (fp != NULL) {
         //Load numbers from file
         char line[20];
-        uint64_t prime;
+        unsigned long long prime;
         //First line contains tested numbers
         if (fgets(line, sizeof(line), fp) != NULL) {
             if (sscanf(line, "%llu", &prime) != 0) {
@@ -27,7 +27,7 @@ uint8_t load_primes() {
         //Load rest of lines into prime array
         while (fgets(line, sizeof(line), fp) != NULL) {
             if (sscanf(line, "%llu", &prime) != 0) {
-                primes = realloc(primes, (psize + 1)*sizeof(uint64_t));
+                primes = realloc(primes, (psize + 1)*sizeof(unsigned long long));
                 if (primes == NULL) {
                     printf("Not enough memory (realloc returned NULL)\n");
                     return 1;
@@ -45,20 +45,20 @@ uint8_t load_primes() {
 
 
 //Start generating primes at end of list and write to file
-uint8_t generate_primes(uint64_t n) {
+int generate_primes(unsigned long long n) {
     printf("Generating primes up to %llu\n", n);
 
     if (psize == 0) {
-        primes = realloc(primes, sizeof(uint64_t));
+        primes = realloc(primes, sizeof(unsigned long long));
         primes[psize++] = 2;
     }
-    uint64_t start = primes[psize-1] + 1;
+    unsigned long long start = primes[psize-1] + 1;
     
     //Test prime with other known primes exhaustive
-    uint64_t p;
-    uint64_t t;
+    unsigned long long p;
+    unsigned long long t;
     for (p = start; p <= n; p++) {
-        uint8_t ip = 1;
+        int ip = 1;
         for (t = 0; t < psize; t++) {
             if (p % primes[t] == 0) {
                 ip = 0;
@@ -66,7 +66,7 @@ uint8_t generate_primes(uint64_t n) {
             }
         }
         if (ip == 1) {
-            primes = realloc(primes, (psize + 1)*sizeof(uint64_t));
+            primes = realloc(primes, (psize + 1)*sizeof(unsigned long long));
             if (primes == NULL) {
                 printf("Not enough memory (realloc returned NULL)\n");
                 return 1;
@@ -87,7 +87,7 @@ uint8_t generate_primes(uint64_t n) {
 
 
 //Check if number is prime by looking for it in list
-uint8_t is_prime(uint64_t n) {
+bool is_prime(unsigned long long n) {
     //If first time called
     if (primes == NULL) {
         load_primes();
@@ -96,7 +96,7 @@ uint8_t is_prime(uint64_t n) {
     if (pgenerated < n) {
         generate_primes(n);
     }
-    uint32_t i;
+    unsigned int i;
     //printf("Length of prime array %u\n", psize);
 
     for (i = 0; i < psize; i++) {
@@ -106,7 +106,7 @@ uint8_t is_prime(uint64_t n) {
 }
 
 //Get prime by index
-uint64_t get_prime(uint32_t i) {
+unsigned long long get_prime(unsigned int i) {
     //If first time called
     if (primes == NULL) {
         load_primes();
@@ -121,7 +121,7 @@ uint64_t get_prime(uint32_t i) {
 
 
 //Get row, returns start of next row
-char *get_row(char **start, char *row) {
+bool get_row(char **start, char *row) {
     char *stop = *start;
     //move to end of line
     while (*stop != '\n' && *stop != '\0') stop++;
@@ -130,9 +130,9 @@ char *get_row(char **start, char *row) {
     
     if (*stop != '\0') {
         *start = stop + 1;
-        return 1;
+        return true;
     } else {
         *start = stop;
-        return 0;
+        return false;
     }
 }

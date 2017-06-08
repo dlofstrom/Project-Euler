@@ -8,10 +8,10 @@
 
 void problem(char *info)
 {
-    uint64_t n;
-    uint64_t N = 0;
-    uint32_t d = 1;
-    uint64_t t;
+    unsigned long long n;
+    unsigned long long N = 0;
+    unsigned int d = 1;
+    unsigned long long t;
     for (n = 1; d < 500; n++) {
         //Calculate triangle number for number "n"
         N += n;

@@ -3,16 +3,17 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include <string.h>
 #include <math.h>
 
 
 //Prime functions
-uint8_t generate_primes(uint64_t n);
-uint8_t is_prime(uint64_t n);
-uint64_t get_prime(uint32_t i);
+int generate_primes(unsigned long long n);
+bool is_prime(unsigned long long n);
+unsigned long long get_prime(unsigned int i);
 
 //Get row
-char *get_row(char **start, char *row);
+bool get_row(char **start, char *row);
 
 #endif

@@ -7,13 +7,14 @@
 
 void problem(char *info)
 {
-    uint32_t sum = 0;
-    
-    uint16_t f[10000] = {1}; //Factorial number (starts at 1)
-    uint16_t ft[10000] = {0}; //Temporary storage for intermediate result
+    unsigned int sum = 0;
+
+
+    int f[10000] = {1}; //Factorial number (starts at 1)
+    int ft[10000] = {0}; //Temporary storage for intermediate result
 
     //Go through n = 1,2,...,N in N! and multiply
-    uint32_t i, j, t, c;
+    int i, j, t, c;
     for (i = 1; i <= 100; i++) {
         t = i;
         c = 0;

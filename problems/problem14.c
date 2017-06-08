@@ -6,7 +6,7 @@
 #include "common.h"
 
 //Recursive function
-uint32_t collatz(uint32_t n) {
+unsigned int collatz(unsigned int n) {
     if (n == 1) return 1;
     else if (n % 2 == 0) return 1 + collatz(n/2);
     else return 1 + collatz(3*n + 1);
@@ -14,8 +14,8 @@ uint32_t collatz(uint32_t n) {
 
 void problem(char *info)
 {
-    uint32_t longest = 0;
-    uint32_t i, I, l;
+    unsigned int longest = 0;
+    unsigned int i, I, l;
     for (i = 1; i < 1000000; i++) {
         l = collatz(i);
         if (l > longest) {

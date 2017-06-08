@@ -12,15 +12,15 @@ typedef struct nn {
     struct nn *next;
 } name_node_t;
 
-uint32_t name_value(char *name) {
-    uint32_t v = 0;
+unsigned int name_value(char *name) {
+    unsigned int v = 0;
     while (*name != '\0') v += *(name++) - 'A' + 1;
     return v;
 }
 
 void problem(char *info)
 {
-    uint64_t total = 0;
+    unsigned long long total = 0;
     
     //Get names from link
     char *names = get_webpage("https://projecteuler.net/project/resources/p022_names.txt");
@@ -68,7 +68,7 @@ void problem(char *info)
 
     //Calculate total
     np = list;
-    uint32_t v = 1;
+    unsigned int v = 1;
     while (np != NULL) {
         total += v * name_value(np->name);
         np = np->next;

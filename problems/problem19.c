@@ -5,7 +5,7 @@
 #include "problem.h"
 #include "common.h"
 
-uint32_t days(uint32_t year) {
+unsigned int days(unsigned int year) {
     //Check for leap year
     if (year % 400 == 0) return 366;
     else if (year % 100 == 0) return 365;
@@ -13,9 +13,9 @@ uint32_t days(uint32_t year) {
     else return 365;
 }
 
-uint32_t starting_day(uint32_t month, uint32_t ynd, uint32_t ysd) {
+unsigned int starting_day(unsigned int month, unsigned int ynd, unsigned int ysd) {
     //+1 day if leap year
-    uint32_t ly = (ynd == 366) ? 1 : 0;
+    unsigned int ly = (ynd == 366) ? 1 : 0;
 
     switch (month) {
     case 0: //Jan
@@ -66,12 +66,12 @@ uint32_t starting_day(uint32_t month, uint32_t ynd, uint32_t ysd) {
 
 void problem(char *info)
 {
-    uint32_t sum = 0;
+    unsigned int sum = 0;
 
     //Starting day for 1901, 1900 is on a Monday
-    uint32_t sd = (days(1900) + 1) % 7;
+    unsigned int sd = (days(1900) + 1) % 7;
     printf("1901 starts on %u\n", sd);
-    uint32_t y, nd, m;
+    unsigned int y, nd, m;
     for (y = 1901; y <= 2000; y++) {
         nd = days(y);
 

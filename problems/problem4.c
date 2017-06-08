@@ -5,7 +5,7 @@
 #include "problem.h"
 #include "common.h"
 
-uint8_t is_palindrome(uint32_t n)
+bool is_palindrome(unsigned int n)
 {
     //convert to string
     char ns[10];
@@ -22,8 +22,8 @@ uint8_t is_palindrome(uint32_t n)
 
 void problem(char *info)
 {   
-    uint32_t n,x,y;
-    uint32_t largest = 0;
+    unsigned int n,x,y;
+    unsigned int largest = 0;
     for (x = 999; x > 99; x--) {
         for (y = 999; y > 99; y--) {
             n = x*y;

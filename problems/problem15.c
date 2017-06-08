@@ -7,12 +7,12 @@
 
 //Node in nxn grid, n ways to 0,0
 typedef struct {
-    int32_t x;
-    int32_t y;
-    uint64_t n;
+    int x;
+    int y;
+    unsigned long long n;
 } node_t;
 
-uint64_t calculate_routes(int32_t x, int32_t y, node_t *a) {
+unsigned long long calculate_routes(int x, int y, node_t *a) {
     //Check if non valid coordinate
     if (x < 0 || y < 0) return 0;
     //Check if at origo
@@ -27,7 +27,7 @@ uint64_t calculate_routes(int32_t x, int32_t y, node_t *a) {
     }
 
     //Else calculate how many ways there are to 0,0 from current x,y
-    uint64_t n = calculate_routes(x-1,y,a) + calculate_routes(x,y-1,a);
+    unsigned long long n = calculate_routes(x-1,y,a) + calculate_routes(x,y-1,a);
     //Store in lookup memory
     as = a;
     while (as->n != 0) as++;
@@ -39,10 +39,10 @@ uint64_t calculate_routes(int32_t x, int32_t y, node_t *a) {
 
 void problem(char *info)
 {
-    const uint32_t size = 20;
+    const unsigned int size = 20;
     node_t array[size*size+1] = {{0,0,0}}; //Initialized to 0
 
     //Calculate number of routes from a x,y position from 0,0
-    uint64_t n = calculate_routes(size, size, array);
+    unsigned long long n = calculate_routes(size, size, array);
     printf("Answer: %llu\n", n);
 }

@@ -7,10 +7,10 @@
 
 void problem(char *info)
 {
-    uint64_t sum = 0;
+    unsigned long long sum = 0;
 
     //All primes below two million
-    uint32_t pi, p;
+    unsigned int pi, p;
     for (pi = 0; pi < 2000000; pi++) {
         p = get_prime(pi);
         if (p < 2000000) {

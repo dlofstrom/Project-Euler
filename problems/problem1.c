@@ -7,8 +7,8 @@
 
 void problem(char *info)
 {
-    uint32_t i;
-    uint32_t sum = 0;
+    int i;
+    unsigned int sum = 0;
     for (i = 0; i < 1000; i++) {
         if (i % 3 == 0 || i % 5 == 0) sum += i;
     }

@@ -8,12 +8,12 @@
 
 void problem(char *info)
 {
-    uint64_t number = 600851475143;
+    unsigned long long number = 600851475143;
     
-    uint64_t pfactors[100];
-    uint64_t *pf = pfactors;
-    uint64_t pi = 0;
-    uint64_t p;
+    unsigned long long pfactors[100];
+    unsigned long long *pf = pfactors;
+    unsigned long long pi = 0;
+    unsigned long long p;
     while (number != 1) {
         p = get_prime(pi);
         //printf("Testing %llu / %llu: ", number, p);

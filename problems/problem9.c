@@ -8,10 +8,10 @@
 
 void problem(char *info)
 {
-    uint32_t abc = 0;
+    unsigned int abc = 0;
     //Generate possible numbers
-    uint32_t a,b,c;
-    uint32_t a2,b2,c2;
+    unsigned int a,b,c;
+    unsigned int a2,b2,c2;
     for (a = 1; a < 1000; a++) {
         a2 = pow(a, 2);
         //b can only be 1 <= b < 1000-a

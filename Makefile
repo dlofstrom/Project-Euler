@@ -1,6 +1,11 @@
 #Sample Makefile
 
+OS := $(shell uname)
+ifeq ($(OS),Darwin)
 CC = clang
+else
+CC = gcc
+endif
 
 CFLAGS = -Wall -I./inc/
 LIBS = -lcurl -ltidy

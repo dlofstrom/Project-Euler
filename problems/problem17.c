@@ -5,14 +5,14 @@
 #include "problem.h"
 #include "common.h"
 
-uint32_t ones[20] = {0,3,3,5,4,4,3,5,5,4,3,6,6,8,8,7,7,9,8,8}; //0-19
-uint32_t tens[10] = {0,0,6,6,5,5,5,7,6,6}; //00-90
+unsigned int ones[20] = {0,3,3,5,4,4,3,5,5,4,3,6,6,8,8,7,7,9,8,8}; //0-19
+unsigned int tens[10] = {0,0,6,6,5,5,5,7,6,6}; //00-90
 
 void problem(char *info)
 {
-    uint32_t sum = 0;
+    unsigned int sum = 0;
 
-    uint32_t i, n, l, t;
+    unsigned int i, n, l, t;
     for (i = 1; i <= 1000; i++) {
         n = i;
         l = 0;

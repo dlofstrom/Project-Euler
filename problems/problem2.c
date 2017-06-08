@@ -7,9 +7,9 @@
 
 void problem(char *info)
 {
-    uint32_t fib[2] = {1,2};
+    unsigned int fib[2] = {1,2};
     printf("Fibonacci numbers:\n%u, %u", fib[0], fib[1]);
-    uint32_t sum = 2; //Starting with 1,2
+    unsigned int sum = 2; //Starting with 1,2
 
     //Loop until next fibonacci number is > 4000000
     while (fib[0] + fib[1] < 4000000) {

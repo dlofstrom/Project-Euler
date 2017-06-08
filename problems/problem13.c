@@ -11,9 +11,9 @@ void problem(char *info)
     char *start = info;
     char row[100];
     char digits[50];
-    uint32_t carry = 0;
-    int32_t i;
-    uint32_t temp_sum;
+    unsigned int carry = 0;
+    int i;
+    unsigned int temp_sum;
     //Scan info for digits and calculate sum
     while (get_row(&start, row) != 0) {
         //If the first 50 characters are numerical
@@ -38,7 +38,7 @@ void problem(char *info)
     i = 54;
     while (sumr[i] == '0') i--;
     char sum[11];
-    int32_t j;
+    int j;
     for (j = 0; j < 10; j++) {
         sum[j] = sumr[i--];
     }

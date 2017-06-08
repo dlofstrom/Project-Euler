@@ -8,7 +8,9 @@
 
 void problem(char *info)
 {
-    uint32_t ssum, sum, n;
+    unsigned int ssum = 0;
+    unsigned int sum = 0;
+    unsigned int n;
     for (n = 1; n <= 100; n++) {
         sum += n;
         ssum += pow(n, 2);

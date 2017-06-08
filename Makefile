@@ -7,8 +7,8 @@ else
 CC = gcc
 endif
 
-CFLAGS = -Wall -I./inc/
-LIBS = -lcurl -ltidy
+CFLAGS = -g -Wall -I./inc/
+LIBS = -lcurl -ltidy -lm
 
 #src folder contains common files
 SOURCES = $(wildcard src/*.c)

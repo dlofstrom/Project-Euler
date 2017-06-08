@@ -25,7 +25,7 @@ callback(void *contents, size_t size, size_t nmemb, void *userp)
     size_t realsize = size * nmemb;
     memory_s *mem = (memory_s *)userp;
     
-    mem->memory = realloc(mem->memory, mem->size + realsize + 1);
+    mem->memory = realloc(mem->memory, mem->size + realsize + 2);
     if(mem->memory == NULL) {
         printf("not enough memory (realloc returned NULL)\n");
         return 0;
@@ -33,7 +33,7 @@ callback(void *contents, size_t size, size_t nmemb, void *userp)
     
     memcpy(&(mem->memory[mem->size]), contents, realsize);
     mem->size += realsize;
-    mem->memory[mem->size] = 0;
+    mem->memory[mem->size] = '\0';
 
     return realsize;
 }
@@ -84,7 +84,7 @@ void dump_subtree(TidyDoc doc, TidyNode tnod, memory_s *mem)
                 if (tidyNodeGetText(doc, child, &buf)) {
                     if (buf.size != 0) {
                         //Copy buffer to memory (similar to curl callback above)
-                        mem->memory = realloc(mem->memory, mem->size + buf.size + 1); //why + 1
+                        mem->memory = realloc(mem->memory, mem->size + buf.size + 2); //why + 1
                         if(mem->memory == NULL) {
                             printf("Not enouch memory (realloc returned NULL)\n");
                             return;
@@ -93,7 +93,7 @@ void dump_subtree(TidyDoc doc, TidyNode tnod, memory_s *mem)
                         if (buf.bp[buf.size-1] == '\n') buf.size -= 1;
                         memcpy(&(mem->memory[mem->size]), buf.bp, buf.size);
                         mem->size += buf.size;
-                        mem->memory[mem->size] = 0;
+                        mem->memory[mem->size] = '\0';
                         //printf("%s\n\n", (char *)buf.bp);//buf.bp?(char *)buf.bp:"");
                     }
                 }

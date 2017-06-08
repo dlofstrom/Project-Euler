@@ -5,6 +5,8 @@
 #include "problem.h"
 #include "common.h"
 
+#define SIZE 20
+
 //Node in nxn grid, n ways to 0,0
 typedef struct {
     int x;
@@ -39,10 +41,9 @@ unsigned long long calculate_routes(int x, int y, node_t *a) {
 
 void problem(char *info)
 {
-    const unsigned int size = 20;
-    node_t array[size*size+1] = {{0,0,0}}; //Initialized to 0
+    node_t array[SIZE*SIZE+1] = {{0,0,0}}; //Initialized to 0
 
     //Calculate number of routes from a x,y position from 0,0
-    unsigned long long n = calculate_routes(size, size, array);
+    unsigned long long n = calculate_routes(SIZE, SIZE, array);
     printf("Answer: %llu\n", n);
 }

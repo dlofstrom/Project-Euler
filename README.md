@@ -3,7 +3,10 @@ My solutions to the Project Euler problems.
 
 Problems solved in problems directory.
 
-For now only compiled and tested on macOS (10.12.5, clang) and Linux (Ubuntu, gcc).
+Compiled and tested on
+- macOS (Sierra 10.12.5, clang)
+- Linux (Ubuntu, gcc)
+- Windows (7, gcc)
 
 Dependencies: [libcurl](https://curl.haxx.se/libcurl), [libtidy](http://www.html-tidy.org/developer)
 

@@ -38,4 +38,4 @@ bin/problem%: obj/problem%.o $(OBJECTS)
 	$(CC) $(CFLAGS) $< $(OBJECTS) $(LIBS) -o $@
 
 clean:
-	@rm -f obj/* bin/*
+	@rm -f obj/* bin/problem*

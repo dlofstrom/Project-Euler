@@ -152,3 +152,13 @@ unsigned int sum_of_divisors(unsigned int n) {
     }
     return s;
 }
+
+
+unsigned int factorial(unsigned int n) {
+    unsigned int f = 1;
+    unsigned int i;
+    for (i = 1; i <= n; i++) {
+        f *= i;
+    }
+    return f;
+}

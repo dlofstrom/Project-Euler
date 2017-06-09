@@ -16,4 +16,7 @@ unsigned long long get_prime(unsigned int i);
 //Get row
 bool get_row(char **start, char *row);
 
+//Sum of divisors
+unsigned int sum_of_divisors(unsigned int n);
+
 #endif

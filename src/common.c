@@ -145,9 +145,9 @@ unsigned int sum_of_divisors(unsigned int n) {
     unsigned int i;
     for (i = 1; i <= ns; i++) {
         if (n % i == 0) {
-            //printf("%u / %u = %u\n", n, i, n/i);
-            if (i == ns || i == 1) s += i;
+            if (i == n/i || i == 1) s += i;
             else s += i + n/i;
+            
         }
     }
     return s;

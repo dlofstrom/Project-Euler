@@ -162,3 +162,28 @@ unsigned int factorial(unsigned int n) {
     }
     return f;
 }
+
+
+int is_pandigital(int n) {
+    //Concatinate numbers
+    char s[20];
+    sprintf(s, "%d", n);
+
+    //Count digits
+    int digit_count[10] = {1,0,0,0,0,0,0,0,0,0}; //we dont want 0 in the number
+    char *c = s;
+    while (*c != '\0') digit_count[*(c++) - '0']++;
+
+    //Check for "non 1" digit counts
+    int i;
+    for (i = 0; i < 10; i++) {
+        if (digit_count[i] != 1) {
+            //printf("%d x %d = %d is NOT pandigital\n", a, b, p);
+            return 0;
+        }
+    }
+
+    //Return if pandigital
+    //printf("%d x %d = %d is pandigital\n", a, b, p);
+    return 1;
+}

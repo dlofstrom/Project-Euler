@@ -22,4 +22,7 @@ unsigned int sum_of_divisors(unsigned int n);
 //Factorial
 unsigned int factorial(unsigned int n);
 
+//Check if number is pandigital
+int is_pandigital(int n);
+
 #endif

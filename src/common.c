@@ -187,3 +187,31 @@ int is_pandigital(int n) {
     //printf("%d x %d = %d is pandigital\n", a, b, p);
     return 1;
 }
+
+
+//i:th permutation of n characters using Heap's (I think)
+void permutation(int i, char *si, int n, char *so) {
+    //Block size
+    int bs = factorial(n) / n;
+    //printf("Block size: %d\n", bs);
+
+    if (n == 1) {
+        so[0] = si[0];
+        so[1] = '\0';
+    } else {
+        //Character index
+        int ci = i / bs;
+        //printf("Character index: %d\n", ci);
+        so[0] = si[ci];
+        so[1] = '\0';
+        //printf("Character: %c\n", so[0]);
+        
+        char s[10];
+        char *sp = s;
+        int j;
+        for (j = 0; j < n; j++) if (j != ci) *(sp++) = si[j];
+        *sp = '\0';
+        //Recursive
+        permutation(i%bs, s, n-1, so+1);
+    }
+}

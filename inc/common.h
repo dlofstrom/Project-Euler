@@ -25,4 +25,7 @@ unsigned int factorial(unsigned int n);
 //Check if number is pandigital
 int is_pandigital(int n);
 
+//i:th permutation of n characters using Heap's (I think)
+void permutation(int i, char *si, int n, char *so);
+
 #endif
